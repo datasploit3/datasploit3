@@ -31,6 +31,7 @@ def output(data, email=""):
         print(colored(
                 base.style.BOLD + '\n[-] Full-Contact API Key not configured. Skipping Fullcontact Search.\nPlease refer to http://datasploit.readthedocs.io/en/latest/apiGeneration/.\n' + base.style.END, 'red'))
     else:
+        print("DATA: {0}".format(data))
         if data.get("status", "") == 200:
             if data.get("contactInfo", "") != "":
                 print("Name: %s" % data.get("contactInfo", "").get('fullName', ''))

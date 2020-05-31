@@ -7,7 +7,7 @@ import requests
 from termcolor import colored
 
 # Control whether the module is enabled or not
-ENABLED = False
+ENABLED = True
 
 
 
@@ -17,6 +17,7 @@ def banner():
 
 def main(email):
     req = requests.get('https://www.scribd.com/search?page=1&content_type=documents&query=%s' % (email))
+    print("REQ: {0}".format(req.text))
     # maybe use beautiful soup here?
     m = re.findall('(?<=https://www.scribd.com/doc/)\w+', req.text.encode('UTF-8'))
     m = set(m)

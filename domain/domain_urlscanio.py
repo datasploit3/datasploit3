@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from . import base
+import base
 import json
 import requests
 import time
@@ -11,20 +11,15 @@ from termcolor import colored
 
 
 # Control whether the module is enabled or not
-ENABLED = False
+ENABLED = True
 
 # Set alternative UserAgent, if desired, here.
 custom_agent = 'DataSploit - (https://github.com/DataSploit/datasploit)'
 
 
-class style:
-    BOLD = '\033[1m'
-    END = '\033[0m'
-
-
 def banner():
-    print((colored(style.BOLD + '\n[+] Scanning with urlscan.io.\n' +
-                  style.END, 'blue')))
+    print((colored(base.style.BOLD + '\n[+] Scanning with urlscan.io.\n' +
+                  base.style.END, 'blue')))
 
 
 def build_headers(user_agent='', referer=''):
@@ -63,8 +58,8 @@ def get_results(uuid):
             else:
                 time.sleep(10)
         except requests.exceptions.ConnectionError:
-            print((colored(style.BOLD + " [!] COULD NOT CONNECT TO URLSCAN.IO" +
-                  style.END, 'red')))
+            print((colored(base.style.BOLD + " [!] COULD NOT CONNECT TO URLSCAN.IO" +
+                  base.style.END, 'red')))
             sys.exit(0)
 
 
@@ -76,8 +71,13 @@ def main(domain):
         scan = start_scan(domain, headers).json()
     # No need to check for a completed scan immediately.
     time.sleep(5)
-    results = get_results(scan['uuid'])
-    return results.json()
+    if 'status' not in list(scan.keys()):
+        results = get_results(scan['uuid'])
+        return results.json()
+    else:
+        print("Scan results: {0}".format(scan))
+        return []
+
 
 
 def output(data, domain=""):
