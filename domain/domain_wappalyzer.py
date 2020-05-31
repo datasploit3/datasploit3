@@ -4,16 +4,16 @@ import base
 import sys
 import time
 from termcolor import colored
-from Wappalyzer import Wappalyzer
-
+from Wappalyzer import Wappalyzer, WebPage
 ENABLED = True
 
 
 def wappalyzeit(domain):
     temp_list = []
     time.sleep(0.3)
-    wappalyzer = Wappalyzer.Wappalyzer.latest()
-    webpage = WWappalyzer.ebPage.new_from_url(domain)
+    w = Wappalyzer.Wappalyzer()
+    wappalyzer = Wappalyzer.Wappalyzer().latest() 
+    webpage = WebPage.WebPage(domain)
     set1 = wappalyzer.analyze(webpage)
     if set1:
 
@@ -34,12 +34,14 @@ def main(domain):
     try:
         targeturl = "http://" + domain
         data["HTTP"] = wappalyzeit(targeturl)
-    except:
+    except Exception as e:
+        print(e)
         print("[-] HTTP connection was unavailable")
     try:
         targeturl = "https://" + domain
         data["HTTPS"] = wappalyzeit(targeturl)
-    except:
+    except Exception as e:
+        print(e)
         print("[-] HTTPS connection was unavailable")
     return data
 
