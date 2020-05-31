@@ -30,3 +30,4 @@ tldextract
 tqdm
 travispy
 tweepy
+-e git+git@github.com:datasploit3/python3-Wappalyzer.git@master#egg=Wappalyzer
