@@ -7,4 +7,4 @@ sys.path.append(dirname(abspath(__file__)))
 
 for m in __all__:
 	__import__(m, locals(), globals())
-del m, f, dirname, basename, isfile, abspath, glob, importlib, sys, modules
+del m, dirname, basename, isfile, abspath, glob, importlib, sys, modules

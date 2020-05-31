@@ -64,7 +64,7 @@ def main(username):
 
 
 def output(data, username=""):
-    if len(data) is 0:
+    if len(data) == 0:
         print('username not found')
     else:
         for k, v in data.items():

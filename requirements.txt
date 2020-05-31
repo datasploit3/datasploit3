@@ -30,4 +30,4 @@ tldextract
 tqdm
 travispy
 tweepy
-python3-Wappalyzer
+python3-wappalyzer

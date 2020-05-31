@@ -10,7 +10,7 @@ def check_dependency():
 
 
     pip_list = sorted([i.lower() for i in pip_api.installed_distributions()])
-
+    
     for req_dep in list_deps:
         if req_dep not in pip_list:
             missing_deps.append(req_dep)

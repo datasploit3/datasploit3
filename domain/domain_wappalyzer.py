@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 import base
-import Wappalyzer
 import sys
 import time
 from termcolor import colored
+from Wappalyzer import Wappalyzer
 
 ENABLED = True
 
