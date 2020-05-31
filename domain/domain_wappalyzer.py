@@ -12,8 +12,8 @@ ENABLED = True
 def wappalyzeit(domain):
     temp_list = []
     time.sleep(0.3)
-    wappalyzer = Wappalyzer.latest()
-    webpage = WebPage.new_from_url(domain)
+    wappalyzer = Wappalyzer.Wappalyzer.latest()
+    webpage = WWappalyzer.ebPage.new_from_url(domain)
     set1 = wappalyzer.analyze(webpage)
     if set1:
 
