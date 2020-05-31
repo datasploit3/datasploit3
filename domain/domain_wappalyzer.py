@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import base
-from Wappalyzer import Wappalyzer, WebPage
+import Wappalyzer
 import sys
 import time
 from termcolor import colored
