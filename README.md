@@ -1,3 +1,5 @@
+# Datasploit3 is a fork of the original Datasploit that works with Python3
+
 [![ToolsWatch Best Tools](https://www.toolswatch.org/badges/toptools/2016.svg)](http://www.toolswatch.org/2017/02/2016-top-security-tools-as-voted-by-toolswatch-org-readers/)
 
 [![Arsenal-2017-EU](https://github.com/toolswatch/badges/blob/master/arsenal/europe/2017.svg)](http://www.toolswatch.org/2017/09/black-hat-arsenal-europe-2017-lineup/)
@@ -46,14 +48,14 @@ Options:
 ```
 
 # Required Setup:
-* Python 2.7 (because bunch of dependencies do not support Python 3.0)
+* Python 3
 * Bunch of python libraries (use requirements.txt)
 * In **Kali Linux**, please install the requirements using the command `pip install --upgrade --force-reinstall -r requirements.txt`
 
 ## Detailed Tool Documentation:
 > [https://datasploit.github.io/datasploit/](https://datasploit.github.io/datasploit/)
 
-### Lead Developers
+### Original Developers
 * Shubham Mittal - https://github.com/upgoingstar
 * Sudhanshu Chauhan - https://github.com/sudhanshuc
 * Kunal Aggarwal - https://github.com/KunalAggarwal
